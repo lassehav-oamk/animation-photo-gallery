@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <title>CSS3 Image Gallery Transition Example</title>
+  <meta name="description" content="" />
+  <meta name="author" content="lassehav" />
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css"> 
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
+  <script>
+  
+    $(document).ready(function() {
+        $(".image img").click(function() {
+        
+            $(".overlay").toggleClass('fullsize');
+
+        });
+        
+        $(".overlay").click(function() {
+            $(this).removeClass("fullsize");
+        });
+    
+    });
+  </script>
+</head>
+
+<body>
+
+	<h1>Image Gallery Example</h1>
+	
+	<div class="image">
+		<img src="testimage_thumb.jpg">
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+	<div class="image">
+		<img src="testimage_thumb.jpg" >
+	</div>
+    
+	
+	
+
+	<div class="overlay">		
+		<img src="testimage.jpg" class="bigimage">
+	</div>
+	
+  
+</body>
+</html>
