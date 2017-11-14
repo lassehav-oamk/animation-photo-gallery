@@ -4,30 +4,10 @@
   <title>CSS3 Image Gallery Transition Example</title>
   <meta name="description" content="" />
   <meta name="author" content="lassehav" />
-
-  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-
   <link rel="stylesheet" href="style.css"> 
-  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-
-  <script>
-  
-    $(document).ready(function() {
-        $(".image img").click(function() {
-        
-            $(".overlay").toggleClass('fullsize');
-
-        });
-        
-        $(".overlay").click(function() {
-            $(this).removeClass("fullsize");
-        });
-    
-    });
-  </script>
 </head>
 
-<body>
+<body onload="init()">
 
 	<h1>Image Gallery Example</h1>
 	
@@ -63,12 +43,23 @@
 	</div>
     
 	
-	
-
 	<div class="overlay">		
 		<img src="testimage.jpg" class="bigimage">
 	</div>
 	
-  
+	<script>
+		function init()
+		{
+			document.querySelectorAll(".image img").forEach(function(elem){
+				elem.addEventListener("click", function() {
+					document.querySelector(".overlay").classList.toggle('fullsize');
+				});
+			});
+
+			document.querySelector(".overlay").addEventListener("click", function(event){
+				event.target.classList.remove('fullsize');
+			})
+		}
+		</script>
 </body>
 </html>
